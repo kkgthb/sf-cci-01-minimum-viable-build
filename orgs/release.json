@@ -1,0 +1,11 @@
+{
+  "orgName": "CumulusCI Minimum Viable Build to make a scratch org - Release Test Org",
+  "edition": "Enterprise",
+  "settings": {
+    "securitySettings": {
+      "sessionSettings": {
+        "forceRelogin": false
+      }
+    }
+  }
+}

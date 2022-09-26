@@ -1,0 +1,7 @@
+project:
+  name: cci-mvb-scratch-org
+  package:
+    name: CumulusCI Minimum Viable Build to make a scratch org
+  git:
+    default_branch: 'main'
+  source_format: sfdx
