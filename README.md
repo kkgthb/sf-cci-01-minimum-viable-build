@@ -208,3 +208,11 @@ cci task run list_changes --org your-scratch-org-nickname-here
 ```sh
 cci task run retrieve_changes --org your-scratch-org-nickname-here
 ```
+
+---
+
+## Share your wins
+
+[Let me know what you think](https://katiekodes.com/cci-minimum-viable-build/)
+
+-[Katie Kodes](https://katiekodes.com/)
