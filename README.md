@@ -211,6 +211,22 @@ cci task run retrieve_changes --org your-scratch-org-nickname-here
 
 ---
 
+## A note about dependencies
+
+As long as you don't start playing with GitHub "releases" or Salesforce "packaging," you can include any project hosted on GitHub.com that conforms to this "minimum viable build" file-and-folder structure inside of a _different_ CumulusCI project that _also_ conforms to this "minimum viable build" structure.
+
+All you have to do, in the second project, is reference the first project's URL on GitHub.com under the `dependencies` sub-property of `project` inside of a `cumulusci.yml` file.
+
+You can see an example where I built out an "[org-agnostic utils](https://github.com/kkgthb/sf-devops-02-org-agnostic-utils)" CumulusCI project with a couple of Apex classes in it, then [included it as a dependency inside of a different CumulusCI project](https://github.com/kkgthb/sf-devops-04-that-one-feature-human-resources-wanted/blob/main/cumulusci.yml).
+
+Salesforce's [David Reed](https://www.ktema.org/) says:
+
+> "When you use a (GitHub repository without any releases on file) as a dependency, **CumulusCI will** see that there are no releases and **fall back to deploying** the **latest commit** on the main branch as unmanaged metadata."
+
+For those of you who like to organize your Salesforce projects into "releases" and "dependencies," stay tuned -- hopefully, I'll find some time to start playing around with "minimum viable packaging & release" examples.
+
+---
+
 ## Share your wins
 
 [Let me know what you think](https://katiekodes.com/cci-minimum-viable-build/)
