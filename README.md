@@ -187,6 +187,13 @@ For those of you who like to organize your Salesforce projects into "releases" a
 
 ---
 
+## Related experiments
+
+* [sf-cci-02-gh-release-exists-no-sf-package](https://github.com/kkgthb/sf-cci-02-gh-release-exists-no-sf-package)
+* [sf-cci-03-tag-but-no-sf-package](https://github.com/kkgthb/sf-cci-03-tag-but-no-sf-package)
+
+---
+
 ## Share your wins
 
 [Let me know what you think](https://katiekodes.com/cci-minimum-viable-build/)
