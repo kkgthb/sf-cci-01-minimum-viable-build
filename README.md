@@ -72,54 +72,14 @@ At the very least, under a "`project`" property, you'll want to specify the foll
 
 ## 5:  Define the folder as an SFDX project
 
-### Basic configuration
-
 The CumulusCI command-line tool refuses to do anything interesting when run within a folder unless that folder has a `/sfdx-project.json` file in it whose contents are formatted conformingly to the [JSON punctuation standard](https://katiekodes.com/intro-xml-json-1/).
 
 At the very least, you'll need it to specify the following properties:
 
 1. `"packageDirectories"`, with a list containing at least 1 object entry.  Each entry needs a `"path"` sub-property and one of them should have a `"default"` property set to `true`.  The most common setting is to have just 1 entry whose `"path"` value is "`"force-app"`."
 1. `"namespace"`:  usually set to `null`, but put something here if you're about to bundle up your codebase into a managed package.
-
-**Note:**  No action needed here on your part -- I provided an example file as part of the codebase.
-
-### API version
-
-Personally, when I'm developing a small teaching demonstration where API version doesn't really matter, I hate hard-coding an API version into the [Git-tracked](https://katiekodes.com/git-brain-dump/) files within my project folder.
-
-However, you're in a season when Salesforce has started rolling out one of their 3x/year upgrades to certain test environments, but hasn't rolled it out into all production environments, CumulusCI might error out when you try to spin up a scratch org, saying "`Error: Could not process MDAPI response: Update of None package.xml: Error: Invalid version specified`."
-
-As much as I wish you could just add an "`"apiVersion"`" property to a file that you probably aren't tracking with Git such as `/.sfdx/sfdx-config.json`.  Sadly, this doesn't seem to be enough to make CumulusCI happy.
-
-**Note:**  You need to do this by hand after downloading a copy of this codebase if you run into this error.
-
-For example, while the codebase says this:
-
-```json
-{
-  "packageDirectories": [
-    {
-      "path": "force-app"
-    }
-  ],
-  "namespace": null
-}
-```
-
-You might need to change it to say this _(this API version number will quickly become out of date -- choose a better one as appropriate)_:
-
-```json
-{
-  "packageDirectories": [
-    {
-      "path": "force-app"
-    }
-  ],
-  "namespace": null,
-  "sourceApiVersion": "55.0"
-}
-```
-
+1. `"sourceApiVersion"`:  set to something like `"55.0"` -- make it a Salesforce Platform API version that's stable with your codebase.
+  * Personally, when I'm developing a small teaching demonstration where API version doesn't really matter, I hate hard-coding an API version into the [Git-tracked](https://katiekodes.com/git-brain-dump/) files within my project folder.  I just don't like the way it looks to have them get "old" over the years.  However, you're in a season when Salesforce has started rolling out one of their 3x/year upgrades to certain test environments, but hasn't rolled it out into all production environments, CumulusCI might error out when you try to spin up a scratch org that doesn't have `"sourceApiVersion"` set -- or that includes some other repository as a dependency that doesn't.  The error would likely say:  "`Error: Could not process MDAPI response: Update of None package.xml: Error: Invalid version specified`."  So as much as I wish you could just add an "`"apiVersion"`" property to a file that you probably aren't tracking with Git such as `/.sfdx/sfdx-config.json`, to make CumulusCI happy year-round, set `"sourceApiVersion"`.
 
 ---
 

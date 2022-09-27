@@ -4,5 +4,6 @@
       "path": "force-app"
     }
   ],
-  "namespace": null
+  "namespace": null,
+  "sourceApiVersion": "55.0"
 }
