@@ -189,8 +189,8 @@ For those of you who like to organize your Salesforce projects into "releases" a
 
 ## Related experiments
 
-* [sf-cci-02-gh-release-exists-no-sf-package](https://github.com/kkgthb/sf-cci-02-gh-release-exists-no-sf-package)
-* [sf-cci-03-tag-but-no-sf-package](https://github.com/kkgthb/sf-cci-03-tag-but-no-sf-package)
+* [This repo, but with Git tags](https://github.com/kkgthb/sf-cci-03-tag-but-no-sf-package) _(no Salesforce packaging yet)_
+* [This repo, but with Git tags and GitHub releases](https://github.com/kkgthb/sf-cci-02-gh-release-exists-no-sf-package) _(no Salesforce packaging yet)_
 
 ---
 
